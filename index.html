@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+    <link href="supportingFiles/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="./supportingFiles/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Project - BSCS 506</title>
+</head>
+
+<body class="listbytown">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <a href="./index.html">
+                <p class="heading-web navbar-brand ms-3">MANUFACTURING SYSTEM - Simulation Model<br><span>Reference: <b>Simulation Modeling & Analysis (5th Edition) - Problem 1.22</b></span></p>
+            </a>
+            <button class="navbar-toggler" id="navbar-toggler-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="offcanvas offcanvas-end backgroundColor" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 text-end">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <li class="nav-item">
+                        <a id="" class="nav-link nav-slide-in" aria-current="page" href="#"><b>Group Members</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="" class="nav-link nav-slide-in" aria-current="page" href="#"><b></b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="" class="nav-link nav-slide-in" aria-current="page" href="#"><b>Hurmat Naz - B18101039</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="" class="nav-link nav-slide-in" aria-current="page" href="#"><b>Hiba Areej - B18101041</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="" class="nav-link nav-slide-in" aria-current="page" href="#"><b>Mohammad Taha - B18101055</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="" class="nav-link nav-slide-in" aria-current="page" href="#"><b>Tahreem Bakhtiar - B18101118</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar End -->
+
+    <!-- Main -->
+    <section>
+        <main class="main">
+            <div class="h-100 main-div">
+                <div class="h-82">
+                    <div class="h-100 row">
+                        <div class="h-100 col-sm-3">
+                            <div class="h-100" style="background-color: #fff;border: 1px solid #000;border-radius:10px;">
+                                <div class="h-90" style="padding:12px 12px">
+                                    <p class="div-heading">Input Parameters</p>
+                                    <div>
+                                        <form id="formSet">
+                                            <div class="row h-100">
+                                                <div class="col-sm-6 input-col-6-l" style="padding:8px 6px 8px 15px ;text-align: right;">
+                                                    <p class="input-heading">Simulation Days</p>
+                                                    <input class="form-control form-control-sm" id="simTime" value="5" min="0" type="number">
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r" style="padding:8px 15px 8px 6px ;text-align: left;">
+                                                    <p class="input-heading">Standard Deviation</p>
+                                                    <input class="form-control form-control-sm" id="sd" value="2" min="0" step="0.01" type="number">
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l" style="padding-top: 8px;">
+                                                    <p class="input-heading">Deluxe Machines</p>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r" style="padding-top: 8px;">
+                                                    <p class="input-heading">Normal Machines</p>
+                                                </div>
+                                                <div class="col-sm-12 text-center">
+                                                    <label for="" class="form-label">Number of Machines</label>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l">
+                                                    <input class="form-control form-control-sm" id="numberDeluxe" value="5" min="0" type="number">
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r">
+                                                    <input class="form-control form-control-sm" id="numberNormal" value="5" min="0" type="number">
+                                                </div>
+                                                <div class="col-sm-12 text-center" style="padding-top: 8px;">
+                                                    <label for="" class="form-label">Produce Good Units / Hr</label>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l">
+                                                    <input class="form-control form-control-sm" id="goodUnitsDeluxe" value="60" min="0" type="number">
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r">
+                                                    <input class="form-control form-control-sm" id="goodUnitsNormal" value="40" min="0" type="number">
+                                                </div>
+                                                <div class="col-sm-12 text-center" style="padding-top: 8px;">
+                                                    <label for="" class="form-label">Repairing Charges / Hr</label>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l">
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text" id=""><i class="fas fa-dollar-sign"></i></span>
+                                                        <input class="form-control form-control-sm" id="chargesDeluxe" value="20" min="0" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r">
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text" id=""><i class="fas fa-dollar-sign"></i></span>
+                                                        <input class="form-control form-control-sm" id="chargesNormal" value="10" min="0" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 text-center" style="padding-top: 8px;">
+                                                    <label for="" class="form-label">Mean Service Time / Hr</label>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l">
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text timer" id=""><i class="far fa-clock"></i></span>
+                                                        <input class="form-control form-control-sm" id="serviceDeluxe" value="16" min="0" step="0.01" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r">
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text timer" id=""><i class="far fa-clock"></i></span>
+                                                        <input class="form-control form-control-sm" id="serviceNormal" value="10" min="0" step="0.01" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 text-center" style="padding-top: 8px;">
+                                                    <label for="" class="form-label">Mean Repairing Time / Hr</label>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l">
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text timer" id=""><i class="far fa-clock"></i></span>
+                                                        <input class="form-control form-control-sm" id="repairDeluxe" value="8" min="0" step="0.01" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r">
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text timer" id=""><i class="far fa-clock"></i></span>
+                                                        <input class="form-control form-control-sm" id="repairNormal" value="4" min="0" step="0.01" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 text-center" style="padding-top: 8px;">
+                                                    <label for="" class="form-label">Number of Repairman(s)</label>
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-l">
+                                                    <input class="form-control form-control-sm" id="repainmanDeluxe" value="1" min="0" max="1" type="number">
+                                                </div>
+                                                <div class="col-sm-6 input-col-6-r">
+                                                    <input class="form-control form-control-sm" id="repainmanNormal" value="1" min="0" max="1" type="number">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <button class="btn btn-primary input-buttons" id="formSubmit" onclick="submitSystemDetails()"><label style="font-size: 18px;cursor: pointer;padding-bottom: 5px;">Get System Ready</label></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-100 col-sm-9">
+                            <div class="h-100" style="background-color:#fff;border: 1px solid #000;border-radius:10px;">
+                                <div id="" style="padding:12px 12px; position: relative;" class="h-100">
+                                    <div class="h-80">
+                                        <p class="div-heading">Simulation Parameters</p>
+                                        <div class="sim-divs">
+                                            <img id="progressGIF" style="width: 100px;position: absolute;right: 0;top: 40px;margin: 0;padding: 0;display: none;" src="./assets/gfx/Lazy-Loader.svg" alt="">
+                                            <img id="idleGIF" style="width: 81px;position: absolute;right: 9px;top: 55px;margin: 0;padding: 0;" src="./assets/gfx/static.png" alt="">
+                                        </div>
+                                        <div class="row h-80">
+                                            <div class="col-sm-5">
+                                                <div class="h-15 simDivs">
+                                                    <p class="simulation-heading">Simulation Status :</p>
+                                                </div>
+                                                <div class="h-15 simDivs">
+                                                    <p class="simulation-heading">Simulation Time :</p>
+                                                </div>
+                                                <div class="h-40 simDivs">
+                                                    <p class="simulation-heading">Working Machine :</p>
+                                                </div>
+                                                <div class="h-15 simDivs">
+                                                    <p class="simulation-heading">Ready Machines (Working / Queue):</p>
+                                                </div>
+                                                <div class="h-15 simDivs">
+                                                    <p class="simulation-heading">Deluxe Machines (Repairing / Queue):</p>
+                                                </div>
+                                                <div class="h-15 simDivs">
+                                                    <p class="simulation-heading">Normal Machines (Repairing / Queue):</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <div class="h-15 simDivs">
+                                                    <p class="system-status-progress blink" id="progressState" style="display: none;">In Progress ...</p>
+                                                    <p class="system-status-idle" id="idleState">*** IDLE ***</p>
+                                                </div>
+                                                <div class="h-15 simDivs">
+                                                    <p class="system-status"><b id="currentSimTIme">2</b> Hrs</p>
+                                                </div>
+                                                <div class="h-40 simDivs">
+                                                    <p class="system-status"><b id="currentMachineName">Deluxe Machine</b></p>
+                                                    <p class="system-status">Service Time: <b id="currentMachineService">7.5</b> Hrs</p>
+                                                    <p class="system-status">Breakdown @ Service Time : <b id="currentMachineBreakdown">5.5</b> Hrs</p>
+                                                    <p class="system-status">Repair Time: <b id="currentMachineRepair">1.5</b> Hrs</p>
+                                                </div>
+                                                <div class="h-15 simDivs system-status-queue-p" id="queueReady">
+                                                    <p class="system-status-queue" style="color: #0d6efd; background-color: #0d6efd;">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                </div>
+                                                <div class="h-15 simDivs system-status-queue-p" id="queueDeluxe">
+                                                    <p class="system-status-queue" style="color: #0d6efd; background-color: #0d6efd;">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                </div>
+                                                <div class="h-15 simDivs system-status-queue-p" id="queueNormal">
+                                                    <p class="system-status-queue" style="color: #0d6efd; background-color: #0d6efd;">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                    <p class="system-status-queue">0</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row h-20">
+                                        <div class="col-sm-6 h-100">
+                                            <label class="simresults-label">Assumptions :</label>
+                                            <ul class="assumptions">
+                                                <li>
+                                                    <p>Time Advance Mechanism, <b>Fixed Increment Time Approach</b></p>
+                                                </li>
+                                                <li>
+                                                    <p><b>Standard Deviation is constant</b> for the whole system</p>
+                                                </li>
+                                                <li>
+                                                    <p>Each Good Unit <b>Costs: $1</b></p>
+                                                </li>
+                                                <li>
+                                                    <p>Decimal place times are sealed to nearest <b>0.25, 0.5, 0.75 or 1.0 Hr</b></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 simIntermidiate">
+                                            <div class="col-sm-4">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div>
+                                                    <label class="simresults-label">System Idle Time:</label>
+                                                    <p class="simParameters-p"><b id="currentIdleTime">00</b> Hrs</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div>
+                                                    <label class="simresults-label">Profit Generated:</label>
+                                                    <p class="simParameters-p">$ <b id="currentRevenue">200</b></p>
+                                                </div>
+                                                <div>
+                                                    <label class="simresults-label">Repairmen Utilization:</label>
+                                                    <p class="simParameters-p"><b id="currentUtilization">30</b> %</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-20">
+                    <div class="h-100 row">
+                        <div class="h-100 col-sm-10">
+                            <div class="h-100" style="background-color: #8296a7;border: 1px solid #000;border-radius:10px;margin-top: 20px;">
+                                <div class="h-100" style="padding:12px 12px">
+                                    <p class="div-heading">*** Simulation Results ***</p>
+                                    <div class="output-div h-75">
+                                        <div class="row h-100">
+                                            <div class="col-sm-4 previousDiv">
+                                                <div>
+                                                    <label class="results-label">Simulation Time :</label>
+                                                    <p class="results-p"><b id="resultSimTime">150</b> Hrs</p>
+                                                </div>
+                                                <div>
+                                                    <label class="results-label">System Idle Time:</label>
+                                                    <p class="results-p"><b id="resultIdleTime">00</b> Hrs</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 previousDiv">
+                                                <div>
+                                                    <label class="results-label">Repairman Utilization :</label>
+                                                    <p class="results-p"><b id="resultRepairmanUtilization">20</b> %</p>
+                                                </div>
+                                                <div>
+                                                    <label class="results-label">Max Queue Size :</label>
+                                                    <p class="results-p"><b id="resultBreakdown">5</b> units</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 previousDiv">
+                                                <div>
+                                                    <label class="results-label">Charges Paid :</label>
+                                                    <p class="results-p">$ <b id="resultCharges">150</b></p>
+                                                </div>
+                                                <div>
+                                                    <label class="results-label">Revenue Generated :</label>
+                                                    <p class="results-p">$ <b id="resultRevenue">150</b></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-100 col-sm-2">
+                            <div class="h-100" style="background-color: #fff;border: 1px solid #000;border-radius:10px;margin-top: 20px;">
+                                <div style="padding:12px 12px" class="h-100">
+                                    <p class="div-heading">Controllers</p>
+                                    <div class="control-buttons-div">
+                                        <button class="btn btn-success control-buttons control-buttons-play" id="playPause" onclick="startSimulation()"><i class="fas fa-play"></i></button>
+                                        <button class="btn btn-primary control-buttons" id=""><i class="fas fa-forward"></i></button>
+                                        <button class="btn btn-warning control-buttons" id=""><i class="fas fa-fast-forward"></i></button>
+                                        <button class="btn btn-danger control-buttons" disabled="disabled" id="stopBtn" onclick="stopSimulation()"><i class="fas fa-stop-circle"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!-- Main End -->
+
+    <!-- JavaScript require for bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> -->
+    <script src="./supportingFiles/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="./src/app.js"></script>
+</body>
+
+</html>
